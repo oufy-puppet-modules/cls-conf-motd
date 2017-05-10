@@ -35,7 +35,35 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class cls_conf_motd {
+class cls_conf_motd($str_motd) {
 
+  if $kernel == "Linux" {
+    file { '/etc/motd':
+      ensure			=>	file,
+      backup			=>	false,
+      owner			=>	'root',
+      group			=>	'root',
+      mode			=>	0644,
+      content			=>	template("cls_conf_motd/motd.erb"),
+    }
 
+    file { '/etc/issue':
+      ensure			=>	file,
+      backup			=>	false,
+      owner			=>	'root',
+      group			=>	'root',
+      mode			=>	0644,
+      content			=>	template("cls_conf_motd/issue.erb"),
+    }
+
+    file { '/etc/issue.net':
+      ensure			=>	file,
+      backup			=>	false,
+      owner			=>	'root',
+      group			=>	'root',
+      mode			=>	0644,
+      content			=>	template("cls_conf_motd/issue.erb"),
+    }
+
+  }
 }

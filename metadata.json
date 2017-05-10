@@ -1,6 +1,6 @@
 {
   "name": "oufy-cls_conf_motd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "oufy",
   "summary": "Manage message of the day",
   "license": "GPLv3",
